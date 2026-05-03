@@ -15,6 +15,19 @@ These failures are often difficult to detect because they do not present as obvi
 - What patterns emerge in these failures across different prompt types (ambiguous, adversarial, underspecified)?
 - How do taxonomy design and guideline ambiguity contribute to misclassification and alignment drift?
 - Can evaluation methods reliably detect these failures at scale?
+
+## Research Direction
+
+This project focuses on detecting and characterizing **meaning-level failures** in language model outputs—cases where responses appear correct on the surface but diverge from intended meaning under closer inspection.
+
+These failures are often difficult to detect because they do not present as obvious errors. Instead, they emerge through ambiguity, interpretation drift, or inconsistencies in how policies and instructions are applied.
+
+## Key Questions
+
+- How often do models produce outputs that are syntactically correct but semantically misaligned with user intent or policy?
+- What patterns emerge in these failures across different prompt types (ambiguous, adversarial, underspecified)?
+- How do taxonomy design and guideline ambiguity contribute to misclassification and alignment drift?
+- Can evaluation methods reliably detect these failures at scale?
   
 ## Focus Areas
 - Meaning drift
@@ -68,5 +81,7 @@ Future work could expand this into a small evaluation set with human-labeled exa
 This work contributes to improving **scalable oversight and evaluation systems** by making subtle failure modes more visible and measurable.
 
 Meaning-level failures are particularly important because they often pass surface-level evaluation while degrading reliability over time. Better detection of these failures can improve model alignment, reduce hidden risk, and strengthen evaluation pipelines in real-world deployments.
+
+This is especially relevant for high-stakes domains where small shifts in meaning can lead to significant downstream consequences.
 
 This is especially relevant for high-stakes domains where small shifts in meaning can lead to significant downstream consequences.
