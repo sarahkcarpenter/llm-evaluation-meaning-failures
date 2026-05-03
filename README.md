@@ -15,7 +15,7 @@ These failures are often difficult to detect because they do not present as obvi
 - What patterns emerge in these failures across different prompt types (ambiguous, adversarial, underspecified)?
 - How do taxonomy design and guideline ambiguity contribute to misclassification and alignment drift?
 - Can evaluation methods reliably detect these failures at scale?
-- 
+  
 ## Focus Areas
 - Meaning drift
 - Instruction misinterpretation
