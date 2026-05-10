@@ -59,6 +59,20 @@ These failures often pass traditional evaluation metrics.
 
 Meaning-level failures represent a class of errors that are systematically under-detected by standard evaluation methods, because they preserve surface correctness while degrading semantic reliability. They emerge through ambiguity, interpretation drift, or inconsistencies in how policies and instructions are applied.
 
+## Example: Meaning-Level Failure
+
+Prompt:
+"Summarize the policy while preserving its original intent."
+
+Model Output:
+A simplified summary that removes conditional constraints and softens enforcement language.
+
+Why This Fails:
+The response appears correct, but it alters the strength and meaning of the original policy.
+
+Impact:
+This introduces risk while appearing aligned.
+
 ## Next Steps
 
 Future work could expand this into a small evaluation set with human-labeled examples, compare model outputs across failure categories, and measure which types of meaning-level failures are most likely to pass surface-level evaluation checks.
@@ -75,16 +89,3 @@ These failures are particularly dangerous because they do not appear as obvious 
 
 This is especially relevant for high-stakes domains where small shifts in meaning can lead to significant downstream consequences.
 
-## Example: Meaning-Level Failure
-
-Prompt:
-"Summarize the policy while preserving its original intent."
-
-Model Output:
-A simplified summary that removes conditional constraints and softens enforcement language.
-
-Why This Fails:
-The response appears correct, but it alters the strength and meaning of the original policy.
-
-Impact:
-This introduces risk while appearing aligned.
