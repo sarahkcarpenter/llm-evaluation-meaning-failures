@@ -1,6 +1,6 @@
 ## LLM Evaluation: Meaning-Level Failures
 
-This repository explores how large language models fail at the level of meaning, even when outputs appear correct on the surface.
+This repository examines how large language models fail at the level of meaning, even when outputs appear correct on the surface.
 
 It focuses on drift, semantic misalignment, and evaluation gaps that emerge in real-world systems.
 
@@ -14,7 +14,7 @@ These failures build trust while introducing risk, making them difficult to catc
 
 Evaluation workflows frequently reward speed and agreement over discernment, allowing subtle errors to pass through undetected. Over time, this leads to drift in model behavior and degradation in system reliability.
 
-The core issue is not just accuracy. It is whether the model preserves intended meaning under real-world conditions.
+The core issue is not just accuracy. The question is whether the model preserves the intended meaning under real-world conditions.
 
 ## Where Systems Break
 AI systems rarely fail in isolation.
@@ -40,7 +40,7 @@ This framework evaluates model behavior across three layers:
 3. Adversarial Tests  
    Edge cases and stress conditions that expose hidden failures
 
-Together, these layers provide a more complete view of model reliability.
+Together, these layers provide a more complete view of reliability.
 
 
 ## Common Failure Modes
