@@ -24,6 +24,14 @@ Failures emerge at the transitions between:
 
 Each layer assumes the previous layer handled the risk. Over time, small inconsistencies compound into system-level drift.
 
+In practice, the more dangerous failures are when:
+- outputs are fluent and well-structured
+- but the underlying meaning has shifted
+  
+Evaluation workflows frequently reward speed and agreement over discernment, allowing subtle errors to pass through undetected. Over time, this leads to drift in model behavior and degradation in system reliability.
+
+The core issue is not just accuracy. It is whether the model preserves intended meaning under real-world conditions.
+
 ## Evaluation Stack
 
 This framework evaluates model behavior across three layers:
@@ -49,92 +57,9 @@ Together, these layers provide a more complete view of model reliability.
 
 These failures often pass traditional evaluation metrics.
 
-1)Objective:
 
-This repository outlines a practical framework for evaluating large language model behavior beyond surface correctness. It focuses on detecting drift, identifying meaning-level failure, correcting misalignment, and closing evaluation gaps that emerge in real-world systems. 
-
-2) The Problem:
-
-In production systems, outputs often appear correct on the surface while failing at the level of meaning.
-
-Evaluation workflows frequently reward speed and agreement over discernment, allowing subtle errors to pass through undetected. Over time, this leads to drift in model behavior and degradation in system reliability.
-
-The core issue is not just accuracy. It is whether the model preserves intended meaning under real-world conditions.
-
-## Why This Matters:
-
-Most evaluation systems focus on surface correctness.
-
-In practice, the more dangerous failures are when:
-- outputs are fluent and well-structured
-- but the underlying meaning has shifted
-
-These failures build trust while introducing risk.
-
-## 3) Evaluation Stack:
-
-This framework evaluates model behavior across three layers:
-
-1. Controlled Tests
-   Designed to evaluate reasoning and adherence under clearly defined conditions.
-
-   Clear, structured scenarios to test reasoning and adherence
-
-3. Naturalistic Tests  
-   Reflect real-world usage where ambiguity, variation, and interpretation come into play. Real-world         inputs with ambiguity and variation
-
-4. Adversarial Tests  
-   Stress the system using edge cases, implicit challenges, and boundary conditions to expose failure         modes.
-   Edge cases and stress conditions that expose hidden failures
-
-
-   Each layer serves a different purpose. Together, they provide a more complete view of model behavior.
-
-## 4) Failure Modes
-
-Common failure modes observed in evaluation systems include:
-
-- Under-refusal: failure to block harmful or disallowed content
-- Over-refusal: unnecessary rejection of safe or valid requests
-- Semantic misalignment: preservation of structure but altered meaning
-- Meaning drift: gradual degradation in interpretation over time
-- Normalization errors: subtle changes introduced during processing that alter intent
-
-These often pass traditional evaluation metrics while degrading system reliability.
-
-5) Example:
-
-Prompt:
-"Summarize the policy while preserving the original intent."
-
-Model Output:
-A clean summary that removes qualifying language and softens constraints.
-
-Issue:
-The response appears correct, but alters the strength and meaning of the original policy.
-
-This is a meaning-level failure, not a surface-level error.
-
-## Core Claim
 
 Meaning-level failures represent a class of errors that are systematically under-detected by standard evaluation methods, because they preserve surface correctness while degrading semantic reliability.
-
-## Research Direction
-
-This project focuses on detecting and characterizing **meaning-level failures** in language model outputs—cases where responses appear correct on the surface but diverge from intended meaning under closer inspection.
-
-These failures are often difficult to detect because they do not present as obvious errors. Instead, they emerge through ambiguity, interpretation drift, or inconsistencies in how policies and instructions are applied.
-
-## Key Questions
-
-- How often do models produce outputs that are syntactically correct but semantically misaligned with user intent or policy?
-- What patterns emerge in these failures across different prompt types (ambiguous, adversarial, underspecified)?
-- How do taxonomy design and guideline ambiguity contribute to misclassification and alignment drift?
-- Can evaluation methods reliably detect these failures at scale?
-
-## Research Direction
-
-This project focuses on detecting and characterizing **meaning-level failures** in language model outputs—cases where responses appear correct on the surface but diverge from intended meaning under closer inspection.
 
 These failures are often difficult to detect because they do not present as obvious errors. Instead, they emerge through ambiguity, interpretation drift, or inconsistencies in how policies and instructions are applied.
 
@@ -203,7 +128,7 @@ Meaning-level failures are particularly important because they often pass surfac
 
 This is especially relevant for high-stakes domains where small shifts in meaning can lead to significant downstream consequences.
 
-These failures are particularly dangerous because they do not appear as obvious errors, making them difficult to detect until they accumulate into system-level reliability issues.
+These failures are particularly dangerous because they do not appear as obvious errors, making them difficult to detect until they propagate into system-level reliability issues.
 
 This is especially relevant for high-stakes domains where small shifts in meaning can lead to significant downstream consequences.
 
@@ -216,7 +141,7 @@ Model Output:
 A simplified summary that removes conditional constraints and softens enforcement language.
 
 Why This Fails:
-The response appears correct and readable, but changes the meaning by reducing the strength of the policy.
+The response appears correct, but it alters the strength and meaning of the original policy.
 
 Impact:
 This introduces risk while appearing aligned.
