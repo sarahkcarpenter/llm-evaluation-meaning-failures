@@ -1,9 +1,4 @@
-def detect_meaning_shift(original, modified):
-    """
-    Very simple comparison to flag potential meaning drift.
-    This is not production-grade, but demonstrates the concept.
-    """
-
+def detect_shift(original, modified):
     original_words = set(original.lower().split())
     modified_words = set(modified.lower().split())
 
@@ -11,15 +6,7 @@ def detect_meaning_shift(original, modified):
     added = modified_words - original_words
 
     return {
-        "removed_terms": list(removed),
-        "added_terms": list(added),
-        "risk_flag": len(removed) > 3 or len(added) > 3
+        "removed": list(removed),
+        "added": list(added),
+        "possible_drift": len(removed) + len(added) > 5
     }
-
-
-if __name__ == "__main__":
-    original = "The policy must be strictly enforced under all conditions."
-    modified = "The policy should be followed in most situations."
-
-    result = detect_meaning_shift(original, modified)
-    print(result)
