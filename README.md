@@ -1,16 +1,16 @@
-# LLM Evaluation: Meaning-Level Failures
+#1. LLM Evaluation: Meaning-Level Failures
 
 This repository explores how large language models fail at the level of meaning, even when outputs appear correct on the surface.
 
 It focuses on drift, semantic misalignment, and evaluation gaps that emerge in real-world systems.
 
-## Why This Matters
+##2. Why This Matters
 
 Most evaluation systems focus on surface correctness.
 
 In practice, the more dangerous failures occur when outputs are fluent, structured, and appear correct, but the underlying meaning has shifted.
 
-These failures build trust while introducing risk, making them difficult to detect and easy to scale.
+These failures build trust while introducing risk, making them difficult to catch and easy to scale.
 
 In practice, the more dangerous failures are when:
 - outputs are fluent and well-structured
@@ -20,7 +20,7 @@ Evaluation workflows frequently reward speed and agreement over discernment, all
 
 The core issue is not just accuracy. It is whether the model preserves intended meaning under real-world conditions.
 
-## Where Systems Break
+##3. Where Systems Break
 
 AI systems rarely fail in isolation.
 
@@ -32,7 +32,7 @@ Failures emerge at the transitions between:
 
 Each layer assumes the previous layer handled the risk. Over time, small inconsistencies compound into system-level drift.
 
-## Evaluation Stack
+##4. Evaluation Stack
 
 This framework evaluates model behavior across three layers:
 
@@ -47,7 +47,7 @@ This framework evaluates model behavior across three layers:
 
 Together, these layers provide a more complete view of model reliability.
 
-## Common Failure Modes
+##5. Common Failure Modes
 
 - Semantic misalignment: structure preserved, meaning altered  
 - Meaning drift: gradual degradation over time  
@@ -57,21 +57,7 @@ Together, these layers provide a more complete view of model reliability.
 
 These failures often pass traditional evaluation metrics.
 
-
-
-Meaning-level failures represent a class of errors that are systematically under-detected by standard evaluation methods, because they preserve surface correctness while degrading semantic reliability.
-
-These failures are often difficult to detect because they do not present as obvious errors. Instead, they emerge through ambiguity, interpretation drift, or inconsistencies in how policies and instructions are applied.
-
-
-## Failure Categories
-
-- Meaning drift
-- Instruction misinterpretation
-- Boundary instability
-- Over-refusal
-- Under-refusal
-- Policy ambiguity
+Meaning-level failures represent a class of errors that are systematically under-detected by standard evaluation methods, because they preserve surface correctness while degrading semantic reliability. They emerge through ambiguity, interpretation drift, or inconsistencies in how policies and instructions are applied.
 
 ## Next Steps
 
