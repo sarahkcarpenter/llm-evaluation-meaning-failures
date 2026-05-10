@@ -1,10 +1,10 @@
-#1. LLM Evaluation: Meaning-Level Failures
+## LLM Evaluation: Meaning-Level Failures
 
 This repository explores how large language models fail at the level of meaning, even when outputs appear correct on the surface.
 
 It focuses on drift, semantic misalignment, and evaluation gaps that emerge in real-world systems.
 
-##2. Why This Matters
+## Why This Matters
 
 Most evaluation systems focus on surface correctness.
 
@@ -20,7 +20,7 @@ Evaluation workflows frequently reward speed and agreement over discernment, all
 
 The core issue is not just accuracy. It is whether the model preserves intended meaning under real-world conditions.
 
-##3. Where Systems Break
+## Where Systems Break
 
 AI systems rarely fail in isolation.
 
@@ -32,7 +32,7 @@ Failures emerge at the transitions between:
 
 Each layer assumes the previous layer handled the risk. Over time, small inconsistencies compound into system-level drift.
 
-##4. Evaluation Stack
+## Evaluation Stack
 
 This framework evaluates model behavior across three layers:
 
@@ -47,7 +47,7 @@ This framework evaluates model behavior across three layers:
 
 Together, these layers provide a more complete view of model reliability.
 
-##5. Common Failure Modes
+## Common Failure Modes
 
 - Semantic misalignment: structure preserved, meaning altered  
 - Meaning drift: gradual degradation over time  
