@@ -1,7 +1,41 @@
-# Evaluating Meaning-Level Failures in LLM Outputs
+# LLM Evaluation: Meaning-Level Failures
 
-## Overview
-This project explores how language model outputs can appear correct on the surface while failing to preserve intended meaning in subtle but important ways.
+This repository explores how large language models fail at the level of meaning, even when outputs appear correct on the surface.
+
+It focuses on drift, misalignment, and evaluation gaps that emerge in real-world systems. It explores how language model outputs can appear correct on the surface while failing to preserve intended meaning in subtle but important ways.
+
+## Why This Matters
+
+Most evaluation systems focus on surface correctness.
+
+In practice, the more dangerous failures are when:
+- outputs are fluent and well-structured
+- but the underlying meaning has shifted
+
+These failures build trust while introducing risk.
+
+## Evaluation Stack
+
+This framework evaluates model behavior across three layers:
+
+1. Controlled Tests  
+   Clear, structured scenarios to test reasoning and adherence
+
+2. Naturalistic Tests  
+   Real-world inputs with ambiguity and variation
+
+3. Adversarial Tests  
+   Edge cases and stress conditions that expose hidden failures
+
+## Common Failure Modes
+
+- Semantic misalignment  
+- Meaning drift  
+- Under-refusal  
+- Over-refusal  
+- Normalization errors  
+
+These often pass traditional evaluation checks while degrading system reliability.
 
 ## Core Claim
 
