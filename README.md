@@ -1,10 +1,18 @@
-# LLM Evaluation: Meaning-Level Failures
+# LLM Evaluation Stack: Meaning-Level Failures
 
-This repository explores how large language models fail at the level of meaning, even when outputs appear correct on the surface.
+1)Objective:
 
-It focuses on drift, misalignment, and evaluation gaps that emerge in real-world systems. It explores how language model outputs can appear correct on the surface while failing to preserve intended meaning in subtle but important ways.
+This repository outlines a practical framework for evaluating large language model behavior beyond surface correctness. It focuses on detecting drift, identifying meaning-level failure, correcting misalignment, and closing evaluation gaps that emerge in real-world systems. 
 
-## Why This Matters
+2) The Problem:
+
+In production systems, outputs often appear correct on the surface while failing at the level of meaning.
+
+Evaluation workflows frequently reward speed and agreement over discernment, allowing subtle errors to pass through undetected. Over time, this leads to drift in model behavior and degradation in system reliability.
+
+The core issue is not just accuracy. It is whether the model preserves intended meaning under real-world conditions.
+
+## Why This Matters:
 
 Most evaluation systems focus on surface correctness.
 
@@ -14,28 +22,49 @@ In practice, the more dangerous failures are when:
 
 These failures build trust while introducing risk.
 
-## Evaluation Stack
+## 3) Evaluation Stack:
 
 This framework evaluates model behavior across three layers:
 
-1. Controlled Tests  
+1. Controlled Tests
+   Designed to evaluate reasoning and adherence under clearly defined conditions.
+
    Clear, structured scenarios to test reasoning and adherence
 
-2. Naturalistic Tests  
-   Real-world inputs with ambiguity and variation
+3. Naturalistic Tests  
+   Reflect real-world usage where ambiguity, variation, and interpretation come into play. Real-world         inputs with ambiguity and variation
 
-3. Adversarial Tests  
+4. Adversarial Tests  
+   Stress the system using edge cases, implicit challenges, and boundary conditions to expose failure         modes.
    Edge cases and stress conditions that expose hidden failures
 
-## Common Failure Modes
 
-- Semantic misalignment  
-- Meaning drift  
-- Under-refusal  
-- Over-refusal  
-- Normalization errors  
+   Each layer serves a different purpose. Together, they provide a more complete view of model behavior.
 
-These often pass traditional evaluation checks while degrading system reliability.
+## 4) Failure Modes
+
+Common failure modes observed in evaluation systems include:
+
+- Under-refusal: failure to block harmful or disallowed content
+- Over-refusal: unnecessary rejection of safe or valid requests
+- Semantic misalignment: preservation of structure but altered meaning
+- Meaning drift: gradual degradation in interpretation over time
+- Normalization errors: subtle changes introduced during processing that alter intent
+
+These often pass traditional evaluation metrics while degrading system reliability.
+
+5) Example:
+
+Prompt:
+"Summarize the policy while preserving the original intent."
+
+Model Output:
+A clean summary that removes qualifying language and softens constraints.
+
+Issue:
+The response appears correct, but alters the strength and meaning of the original policy.
+
+This is a meaning-level failure, not a surface-level error.
 
 ## Core Claim
 
