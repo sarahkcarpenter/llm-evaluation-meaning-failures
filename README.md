@@ -6,7 +6,6 @@ It focuses on drift, semantic misalignment, and evaluation gaps that emerge in r
 
 
 ## Why This Matters
-
 Most evaluation systems focus on surface correctness.
 
 In practice, the more dangerous failures occur when outputs are fluent, structured, and appear correct, but the underlying meaning has shifted.
@@ -23,7 +22,6 @@ The core issue is not just accuracy. It is whether the model preserves intended 
 
 
 ## Where Systems Break
-
 AI systems rarely fail in isolation.
 
 Failures emerge at the transitions between:
@@ -36,7 +34,6 @@ Each layer assumes the previous layer handled the risk. Over time, small inconsi
 
 
 ## Evaluation Stack
-
 This framework evaluates model behavior across three layers:
 
 1. Controlled Tests  
@@ -52,7 +49,6 @@ Together, these layers provide a more complete view of model reliability.
 
 
 ## Common Failure Modes
-
 - Semantic misalignment: structure preserved, meaning altered  
 - Meaning drift: gradual degradation over time  
 - Under-refusal: failure to block harmful content  
@@ -65,7 +61,6 @@ Meaning-level failures represent a class of errors that are systematically under
 
 
 ## Example: Meaning-Level Failure
-
 Prompt:
 "Summarize the policy while preserving its original intent."
 
@@ -80,12 +75,9 @@ This introduces risk while appearing aligned.
 
 
 ## Next Steps
-
 Future work could expand this into a small evaluation set with human-labeled examples, compare model outputs across failure categories, and measure which types of meaning-level failures are most likely to pass surface-level evaluation checks.
 
-
 ## Potential Impact
-
 This work contributes to improving **scalable oversight and evaluation systems** by making subtle failure modes more visible and measurable.
 
 Meaning-level failures are particularly important because they often pass surface-level evaluation while degrading reliability over time. Better detection of these failures can improve model alignment, reduce hidden risk, and strengthen evaluation pipelines in real-world deployments.
