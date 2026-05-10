@@ -1,4 +1,53 @@
-# LLM Evaluation Stack: Meaning-Level Failures
+# LLM Evaluation: Meaning-Level Failures
+
+This repository explores how large language models fail at the level of meaning, even when outputs appear correct on the surface.
+
+It focuses on drift, semantic misalignment, and evaluation gaps that emerge in real-world systems.
+
+## Why This Matters
+
+Most evaluation systems focus on surface correctness.
+
+In practice, the more dangerous failures occur when outputs are fluent, structured, and appear correct, but the underlying meaning has shifted.
+
+These failures build trust while introducing risk, making them difficult to detect and easy to scale.
+
+## Where Systems Break
+
+AI systems rarely fail in isolation.
+
+Failures emerge at the transitions between:
+- training data
+- evaluation
+- deployment
+- real-world use
+
+Each layer assumes the previous layer handled the risk. Over time, small inconsistencies compound into system-level drift.
+
+## Evaluation Stack
+
+This framework evaluates model behavior across three layers:
+
+1. Controlled Tests  
+   Structured scenarios to test reasoning and adherence
+
+2. Naturalistic Tests  
+   Real-world inputs where ambiguity and interpretation matter
+
+3. Adversarial Tests  
+   Edge cases and stress conditions that expose hidden failures
+
+Together, these layers provide a more complete view of model reliability.
+
+## Common Failure Modes
+
+- Semantic misalignment: structure preserved, meaning altered  
+- Meaning drift: gradual degradation over time  
+- Under-refusal: failure to block harmful content  
+- Over-refusal: unnecessary rejection of valid requests  
+- Normalization errors: subtle changes that alter intent  
+
+These failures often pass traditional evaluation metrics.
 
 1)Objective:
 
@@ -157,3 +206,17 @@ This is especially relevant for high-stakes domains where small shifts in meanin
 These failures are particularly dangerous because they do not appear as obvious errors, making them difficult to detect until they accumulate into system-level reliability issues.
 
 This is especially relevant for high-stakes domains where small shifts in meaning can lead to significant downstream consequences.
+
+## Example: Meaning-Level Failure
+
+Prompt:
+"Summarize the policy while preserving its original intent."
+
+Model Output:
+A simplified summary that removes conditional constraints and softens enforcement language.
+
+Why This Fails:
+The response appears correct and readable, but changes the meaning by reducing the strength of the policy.
+
+Impact:
+This introduces risk while appearing aligned.
