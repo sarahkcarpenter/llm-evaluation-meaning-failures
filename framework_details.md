@@ -30,3 +30,19 @@ This project takes a small-scale, exploratory approach to identifying meaning-le
   
 ## Notes
 This is an exploratory project based on practical experience in high-volume AI evaluation environments.
+
+## Next Steps
+Future work could expand this into a small evaluation set with human-labeled examples, compare model outputs across failure categories, and measure which types of meaning-level failures are most likely to pass surface-level evaluation checks.
+
+## Potential Impact
+This work contributes to improving **scalable oversight and evaluation systems** by making subtle failure modes more visible and measurable.
+
+Meaning-level failures are particularly important because they often pass surface-level evaluation while degrading reliability over time. Better detection of these failures can improve model alignment, reduce hidden risk, and strengthen evaluation pipelines in real-world deployments.
+
+This is especially relevant for high-stakes domains where small shifts in meaning can lead to significant downstream consequences.
+
+These failures are particularly dangerous because they do not appear as obvious errors, making them difficult to detect until they propagate into system-level reliability issues.
+
+This is especially relevant for high-stakes domains where small shifts in meaning can lead to significant downstream consequences.
+
+
