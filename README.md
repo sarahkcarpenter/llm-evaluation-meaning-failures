@@ -12,6 +12,14 @@ In practice, the more dangerous failures occur when outputs are fluent, structur
 
 These failures build trust while introducing risk, making them difficult to detect and easy to scale.
 
+In practice, the more dangerous failures are when:
+- outputs are fluent and well-structured
+- but the underlying meaning has shifted
+  
+Evaluation workflows frequently reward speed and agreement over discernment, allowing subtle errors to pass through undetected. Over time, this leads to drift in model behavior and degradation in system reliability.
+
+The core issue is not just accuracy. It is whether the model preserves intended meaning under real-world conditions.
+
 ## Where Systems Break
 
 AI systems rarely fail in isolation.
@@ -23,14 +31,6 @@ Failures emerge at the transitions between:
 - real-world use
 
 Each layer assumes the previous layer handled the risk. Over time, small inconsistencies compound into system-level drift.
-
-In practice, the more dangerous failures are when:
-- outputs are fluent and well-structured
-- but the underlying meaning has shifted
-  
-Evaluation workflows frequently reward speed and agreement over discernment, allowing subtle errors to pass through undetected. Over time, this leads to drift in model behavior and degradation in system reliability.
-
-The core issue is not just accuracy. It is whether the model preserves intended meaning under real-world conditions.
 
 ## Evaluation Stack
 
