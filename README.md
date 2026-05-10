@@ -1,8 +1,9 @@
-##LLM Evaluation: Meaning-Level Failures
+## LLM Evaluation: Meaning-Level Failures
 
 This repository explores how large language models fail at the level of meaning, even when outputs appear correct on the surface.
 
 It focuses on drift, semantic misalignment, and evaluation gaps that emerge in real-world systems.
+
 
 ## Why This Matters
 
@@ -20,6 +21,7 @@ Evaluation workflows frequently reward speed and agreement over discernment, all
 
 The core issue is not just accuracy. It is whether the model preserves intended meaning under real-world conditions.
 
+
 ## Where Systems Break
 
 AI systems rarely fail in isolation.
@@ -31,6 +33,7 @@ Failures emerge at the transitions between:
 - real-world use
 
 Each layer assumes the previous layer handled the risk. Over time, small inconsistencies compound into system-level drift.
+
 
 ## Evaluation Stack
 
@@ -47,6 +50,7 @@ This framework evaluates model behavior across three layers:
 
 Together, these layers provide a more complete view of model reliability.
 
+
 ## Common Failure Modes
 
 - Semantic misalignment: structure preserved, meaning altered  
@@ -58,6 +62,7 @@ Together, these layers provide a more complete view of model reliability.
 These failures often pass traditional evaluation metrics.
 
 Meaning-level failures represent a class of errors that are systematically under-detected by standard evaluation methods, because they preserve surface correctness while degrading semantic reliability. They emerge through ambiguity, interpretation drift, or inconsistencies in how policies and instructions are applied.
+
 
 ## Example: Meaning-Level Failure
 
@@ -73,9 +78,11 @@ The response appears correct, but it alters the strength and meaning of the orig
 Impact:
 This introduces risk while appearing aligned.
 
+
 ## Next Steps
 
 Future work could expand this into a small evaluation set with human-labeled examples, compare model outputs across failure categories, and measure which types of meaning-level failures are most likely to pass surface-level evaluation checks.
+
 
 ## Potential Impact
 
