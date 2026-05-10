@@ -12,14 +12,9 @@ In practice, the more dangerous failures occur when outputs are fluent, structur
 
 These failures build trust while introducing risk, making them difficult to catch and easy to scale.
 
-In practice, the more dangerous failures are when:
-- outputs are fluent and well-structured
-- but the underlying meaning has shifted
-  
 Evaluation workflows frequently reward speed and agreement over discernment, allowing subtle errors to pass through undetected. Over time, this leads to drift in model behavior and degradation in system reliability.
 
 The core issue is not just accuracy. It is whether the model preserves intended meaning under real-world conditions.
-
 
 ## Where Systems Break
 AI systems rarely fail in isolation.
@@ -57,7 +52,7 @@ Together, these layers provide a more complete view of model reliability.
 
 These failures often pass traditional evaluation metrics.
 
-Meaning-level failures represent a class of errors that are systematically under-detected by standard evaluation methods, because they preserve surface correctness while degrading semantic reliability. They emerge through ambiguity, interpretation drift, or inconsistencies in how policies and instructions are applied.
+Meaning-level failures are systematically under-detected because they preserve surface correctness while degrading semantic reliability. They emerge through ambiguity, interpretation drift, or inconsistencies in how policies and instructions are applied.
 
 
 ## Example: Meaning-Level Failure
@@ -68,7 +63,7 @@ Model Output:
 A simplified summary that removes conditional constraints and softens enforcement language.
 
 Why This Fails:
-The response appears correct, but it alters the strength and meaning of the original policy.
+The response appears correct and readable, but alters the strength and meaning of the original policy.
 
 Impact:
 This introduces risk while appearing aligned.
@@ -78,3 +73,5 @@ This introduces risk while appearing aligned.
 This work focuses on making meaning-level failures more visible and measurable so they can be addressed before they scale into system-level issues.
 
 It reflects practical experience in high-volume evaluation environments, where subtle failures often pass surface-level checks while degrading reliability over time.
+
+These patterns are drawn from direct experience in production evaluation environments, where failure often appears as gradual drift rather than obvious error.
